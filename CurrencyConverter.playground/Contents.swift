@@ -27,10 +27,22 @@ func convert(_ dollars: Double) -> Double {
     }
 }
 
-// Step 6 
+/* Step 6 Creat a function called convert(amountString: String) -> String? Create a constant create a constant called amount.
+ Its value should be the amountString that is initialized into a Double
+ Use a guard let to unwrap the new amount constant.
+Convert the dollar amount to the expected currency (hint, you'll want to call the convert method you created in step 4 */
+
 func convert(amountString: String) -> String? {
-     let amount = Double(amountString)
-    guard let unwrappedAmount = amount, convert() else {
-        return
+    
+    let amount = Double(amountString)
+   
+    guard let unwrappedAmount = amount else {
+        return("No amount entered")
     }
+    let newAmount = String(convert(unwrappedAmount))
+    
+    return(newAmount)
 }
+
+convert(amountString: "")
+convert(amountString: "200.0")
